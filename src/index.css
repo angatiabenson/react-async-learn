@@ -31,7 +31,6 @@
         }
         
         .container {
-            max-width: 900px;
             width: 100%;
             text-align: center;
         }
@@ -118,6 +117,92 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 20px;
+        }
+
+        /* Two-column content layout: posts (70%) and form (30%) */
+        .content-layout {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .posts-column {
+            flex: 0 0 70%;
+        }
+
+        .form-column {
+            flex: 0 0 30%;
+        }
+
+        .form-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-panel h3 {
+            margin: 0 0 12px 0;
+            color: var(--dark-green);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #dfeae0;
+            font-size: 0.95rem;
+            background: #fff;
+            color: var(--text-dark);
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46,204,113,0.08);
+            border-color: var(--primary-green);
+        }
+
+        .form-control[type="textarea"], textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-submit {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background: var(--dark-green);
         }
         
         .card {
@@ -292,10 +377,17 @@
         
         .error-message {
             color: var(--text-medium);
-            font-size: 1.1rem;
             margin-bottom: 25px;
             max-width: 500px;
             line-height: 1.6;
+            color: #e74c3c;
+        }
+        .success-message {
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            max-width: 500px;
+            line-height: 1.6;
+            color: #27ae60;
         }
         
         /* Empty State */
